@@ -1,6 +1,7 @@
 #include "Web.h"
 #include <iostream>
 #include "../app/http/controllers/IndexController.h"
+#include "../app/http/controllers/NowcoderController.h"
 
 // 本来应该有解析类的，但现在没有，那就先随便写个凑凑数
 namespace TRoute{
@@ -26,8 +27,13 @@ namespace TRoute{
         {
             std::cout<<"-----------------------------------------------"<<std::endl;
             std::cout<<"默认解析进入IndexController中"<<std::endl;
-            App::Http::Controllers::IndexController res;
+            App::Http::Controllers::IndexController indexController;
+        }else{
+            std::cout<<"-----------------------------------------------"<<std::endl;
+            std::cout<<"选择进入NowController中，开始答题啦！"<<std::endl;
+            App::Http::Controllers::NowcoderController nowCoderController;
         }
+
         
     }
 }
@@ -45,5 +51,5 @@ void Web::resolve(){
     std::cout<<"++  WEB 解析函数，是我的话就直接在这里面写路由表了(现在只有最简单的一个/的解析)!!!"<<std::endl;
     std::cout<<"++  我们此时默认进入IndexController中."<<std::endl;
     Route route;
-    route.get("/");
+    route.get("//");
 }

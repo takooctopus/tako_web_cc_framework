@@ -1,3 +1,5 @@
+#define _ROUTES_WEB
+
 class Web{
 private:
     /* data */

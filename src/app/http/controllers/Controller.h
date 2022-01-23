@@ -9,7 +9,7 @@ namespace App{
             public:
                 Controller(/* args */);
                 ~Controller();
-                virtual void index() = 0;
+                virtual void Index() = 0;
             };
             
         }

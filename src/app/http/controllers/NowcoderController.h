@@ -5,20 +5,21 @@
 namespace App{
     namespace Http{
         namespace Controllers{
-            class IndexController:public Controller {
+            class NowcoderController:public Controller {
             private:
                 /* data */
             public:
-                IndexController(/* args */);
-                ~IndexController();
+                NowcoderController(/* args */);
+                ~NowcoderController();
                 void Index();
+                void GetQuestion();
             };
             
-            IndexController::IndexController(/* args */){
+            NowcoderController::NowcoderController(/* args */){
                 this->Index();
             }
             
-            IndexController::~IndexController(){
+            NowcoderController::~NowcoderController(){
             }
             
 
