@@ -1,8 +1,10 @@
 #include "index.h"
 #include <iostream>
 #include "routes/Web.h"
+#include "illuminate/EventLoop.h"
+#include "illuminate/Server.h"
 
-int main(){
+void footest(){
     std::cout<<"-----------------------------------------------"<<std::endl;
     std::cout<<"+    Hello World !!!"<<std::endl;
     std::cout<<"+    此处是整个程序入口"<<std::endl;    
@@ -15,5 +17,19 @@ int main(){
     std::cout<<"+    See ya !!!"<<std::endl;
     std::cout<<"+              "<<std::endl;    
     std::cout<<"-----------------------------------------------"<<std::endl;
+    return ;
+}
+
+int main(){
+    /*TODO: 读取配置文件并实例化 -> vector<string>
+            转到后面的
+    */
+    //TODO: 创建子进程，关闭父进程，以在后台运行
+    //TODO: 
+    EventLoop e;
+    e.class_name();
+    Server s;
+    s.class_name();
+    std::cout << "main" << std::endl;
     return 0;
 }

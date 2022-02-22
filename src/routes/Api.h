@@ -1,1 +1,5 @@
-#define _ROUTES_API
+#ifndef __ROUTES_API__
+#define __ROUTES_API__
+
+
+#endif

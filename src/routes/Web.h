@@ -1,4 +1,5 @@
-#define _ROUTES_WEB
+#ifndef __ROUTES_WEB__
+#define __ROUTES_WEB__
 
 class Web{
 private:
@@ -8,5 +9,6 @@ public:
     ~Web();
     void resolve();
 };
+#endif
 
 

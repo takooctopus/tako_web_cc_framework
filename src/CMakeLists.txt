@@ -6,6 +6,7 @@ message("--  +[链接库文件]: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librouters.so
 
 add_subdirectory(routes)
 add_subdirectory(app)
+# add_subdirectory(illuminate)
 
 add_executable(${PROJECT_NAME} index.cc)
 
@@ -13,4 +14,5 @@ add_executable(${PROJECT_NAME} index.cc)
 target_link_libraries(${PROJECT_NAME} 
                       ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librouters.so
                       ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libcontrollers.so
+                      hiredis.so
                       )
