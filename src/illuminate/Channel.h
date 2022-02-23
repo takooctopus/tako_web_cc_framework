@@ -1,3 +1,4 @@
+
 #ifndef __CHANNEL__
 #define __CHANNEL__
 
@@ -16,6 +17,7 @@ class Channel
 {
 private:
     using CallBack = std::function<void()>;
+    
     EventLoop *loop_;
     int fd_;
     __uint32_t events_;
@@ -38,7 +40,7 @@ public:
     Channel(EventLoop *loop);
     Channel(EventLoop* loop, int fd);
     ~Channel();
-    int getFa();
+    int getFd();
     void setFd(int fd);
 
     using SPHttpData = std::shared_ptr<HttpData>;
