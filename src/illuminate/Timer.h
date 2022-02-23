@@ -17,9 +17,10 @@ class TimerNode
 private:
     bool deleted_;
     size_t expired_time_;
-    std::shared_ptr<HttpData> spHttpData_;
+    std::shared_ptr<HttpData> sp_http_data_;
 public:
     TimerNode(std::shared_ptr<HttpData> request_data, int timeout);
+    TimerNode(TimerNode &tn);
     ~TimerNode();
     void update(int timeout);
     bool isValid();
