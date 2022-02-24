@@ -34,8 +34,8 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}/lib)
 
 ## set c++20 编译选项
 # -std=c++20 包含C++20特性
-set (CMAKE_C_COMPILER "/usr/local/gcc-11.2.0/bin/gcc")
-set (CMAKE_CXX_COMPILER "/usr/local/gcc-11.2.0/bin/g++")
+set (CMAKE_C_COMPILER "/usr/local/bin/gcc")
+set (CMAKE_CXX_COMPILER "/usr/local/bin/g++")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")	
 
 # 查找当前目录下的所有源文件
