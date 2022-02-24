@@ -4,6 +4,9 @@
 #include "illuminate/EventLoop.h"
 #include "illuminate/Server.h"
 
+// test相关引用
+// #include<ranges>
+
 void footest(){
     std::cout<<"-----------------------------------------------"<<std::endl;
     std::cout<<"+    Hello World !!!"<<std::endl;
@@ -20,16 +23,35 @@ void footest(){
     return ;
 }
 
+// void test(){
+//     std::vector<int> ints{0,1,2,3,4,5};
+//     auto even = [](int i)
+//     {
+//         //std::cout<<"even("<<i<<")\n"; 
+//         return 0 == i % 2; 
+//     };
+//     auto square = [](int i) 
+//     {
+//         //std::cout<<"square("<<i<<")\n"; 
+//         return i * i; 
+//     };
+
+//     for (int i : ints | std::views::filter(even) | std::views::transform(square)) 
+//     {
+//         std::cout << i << "----------------\n";
+//     }
+// }
+
 int main(){
     /*TODO: 读取配置文件并实例化 -> vector<string>
             转到后面的
     */
     //TODO: 创建子进程，关闭父进程，以在后台运行
     //TODO: 
-    EventLoop e;
-    e.class_name();
-    Server s;
-    s.class_name();
+    // EventLoop e;
+    // e.class_name();
+    // Server s;
+    // s.class_name();
     std::cout << "main" << std::endl;
     return 0;
 }
