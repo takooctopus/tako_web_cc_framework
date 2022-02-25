@@ -23,9 +23,9 @@ class FixedBuffer : noncopyable {
     FixedBuffer(): cur_(data_){}
     ~FixedBuffer(){}
 
-    int avail() const { return static_cast<int> (end_ - cur_); }
+    int avail() const { return static_cast<int> (end() - cur_); }
     const char* data() const { return data_; }
-    int length() const { return static_cast<int> (end - data_); }
+    int length() const { return static_cast<int> (cur_ - data_); }
     char* current() {  return cur_; }
     void add(size_t len) { cur_ += len;}
     void reset() { cur_ = data_; }
@@ -110,8 +110,10 @@ class LogStream : noncopyable {
 
     void append(const char* data, int len) {buffer_.append(data, len);}
     
-    const Buffer& buffer() { buffer_.reset(); }
-}
+    const Buffer& buffer() const {return buffer_;}
+
+    void resetBuffer() { buffer_.reset(); }
+};
 
 
 #endif

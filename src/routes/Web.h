@@ -1,5 +1,5 @@
-#ifndef __ROUTES_WEB__
-#define __ROUTES_WEB__
+#ifndef ROUTES_WEB__
+#define ROUTES_WEB__
 
 class Web{
 private:

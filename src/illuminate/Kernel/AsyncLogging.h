@@ -38,16 +38,16 @@ class AsyncLogging{
     void append(const char* logline, int len);
 
     void start(){
-        running_cond_ = true;
+        running_ = true;
         thread_.start();
         latch_.wait();
     }
 
     void stop(){
-        running_cond_ = false;
+        running_ = false;
         cond_.notify();
         thread_.join();
     }
-}
+};
 
 #endif

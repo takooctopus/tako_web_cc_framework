@@ -74,6 +74,14 @@ Thread::~Thread(){
     if(started_ && !joined_) pthread_detach(pthreadId_);
 }
 
+void Thread::setDefaultName() {
+  if (name_.empty()) {
+    char buff[32];
+    snprintf(buff, sizeof(buff), "Thread");
+    name_ = buff;
+  }
+}
+
 void Thread::start(){
     assert(!started_); //要是开始了就报错
     started_ = true;

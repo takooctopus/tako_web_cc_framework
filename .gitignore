@@ -2,3 +2,4 @@
 build/
 CmakeFiles/
 test/
+*.log

@@ -28,6 +28,6 @@ class LogFile{
     void append(const char* logline, int len);
     void flush();
     void rollFile();
-}
+};
 
 #endif

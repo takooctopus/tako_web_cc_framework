@@ -17,7 +17,7 @@ class AppendFile : noncopyable{
 
     void append(const char* logline, const size_t len);
     void flush();
-}
+};
 
 
 

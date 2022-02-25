@@ -11,3 +11,5 @@ TODO:
 #include "Util.h"
 
 */
+
+void HttpData::handleClose(){}

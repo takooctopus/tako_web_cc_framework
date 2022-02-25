@@ -30,7 +30,7 @@ void AppendFile::append(const char* logline, const size_t len){
     }
 }
 
-size_t AppendFile::flush(){ fflush(fp_); }
+void AppendFile::flush(){ fflush(fp_); }
 
 size_t AppendFile::write(const char* logline, size_t len) {
     // 使用无锁写是因为对于日志的写入，是分离了前后端的

@@ -1,13 +1,14 @@
 #include "index.h"
 #include <iostream>
 #include "routes/Web.h"
-#include "illuminate/EventLoop.h"
-#include "illuminate/Server.h"
+// #include "illuminate/EventLoop.h"
+// #include "illuminate/Server.h"
 
 // test相关引用
 #include<ranges>
 #include<vector>
 #include<cstring>
+#include "illuminate/Kernel/FileUtil.h"
 
 void footest(){
     std::cout<<"-----------------------------------------------"<<std::endl;
@@ -62,7 +63,7 @@ int main(){
     int b = 8;
     std::vector<int> v{1,2,3,4,5,6,7,8};
     std::cout << "main" << std::endl;
-    // test();
+    test();
     std::string inBuffer;
     char buff[128] = "123456";
     ssize_t nread = 5;
@@ -70,7 +71,13 @@ int main(){
     strcpy(buff, "abcdef");
     inBuffer += std::string(buff, buff + nread);
     a = 7;
-
-    
+    std::string filename = "/root/code/cpp/tako/test.log";
+    AppendFile fd(filename);
+    char buffer[100];
+    char* p = buffer;
+    std::string s = "abcdefg----------12345\n";
+    strcpy(buffer, s.c_str());
+    ssize_t n = strlen(buffer);
+    fd.append(buffer, n);
     return 0;
 }
