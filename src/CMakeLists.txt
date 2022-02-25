@@ -11,7 +11,8 @@ add_subdirectory(illuminate)
 add_executable(${PROJECT_NAME} index.cc)
 
 find_package (Threads)
-
+include_directories(/usr/local/include/hiredis)
+link_directories(/usr/local/lib)
 # 链接库文件，与link_libraries类似，但这里需要指定目标文件
 target_link_libraries(${PROJECT_NAME} 
                       ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librouters.so

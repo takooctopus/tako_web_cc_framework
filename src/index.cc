@@ -9,6 +9,7 @@
 #include<vector>
 #include<cstring>
 #include "illuminate/Kernel/FileUtil.h"
+#include <hiredis.h>
 
 void footest(){
     std::cout<<"-----------------------------------------------"<<std::endl;
@@ -49,6 +50,8 @@ std::string getTest(){
     return "get test";
 }
 
+
+
 int main(){
     /*TODO: 读取配置文件并实例化 -> vector<string>
             转到后面的
@@ -79,5 +82,19 @@ int main(){
     strcpy(buffer, s.c_str());
     ssize_t n = strlen(buffer);
     fd.append(buffer, n);
+
+    redisContext* c = redisConnect("127.0.0.1", 6379);
+    if(c == nullptr || c->err){
+        if(c) {
+            printf("Error: %s\n", c->errstr);
+            exit(-1);
+        }
+        else{
+            printf("Can't allocate redis context\n");
+            exit(-1);
+        }
+    }
+    redisReply* reply = (redisReply *) redisCommand(c, "GET hello");
+    printf("%s\n", reply->str);
     return 0;
 }

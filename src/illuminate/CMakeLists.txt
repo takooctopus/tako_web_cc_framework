@@ -7,7 +7,6 @@ message("--         ++[进入illuminate模块编译]")
 set(MODULE_ILLUMINATES    illuminate)
 
 # aux_source_directory(./Kernel ILLUMINATE_SOURCE)
-# aux_source_directory(. ILLUMINATE_SOURCE)
 
 set (ILLUMINATE_SOURCE 
     # Kernel 相关cc，暂时没什么问题
@@ -22,6 +21,7 @@ set (ILLUMINATE_SOURCE
     ./Kernel/AsyncLogging.cc
     ./Kernel/LogFile.cc
 )
+aux_source_directory(. ILLUMINATE_SOURCE)
 
 message("--    测试ILLUMINATE[父目录] : MyVAL : ${ILLUMINATE_SOURCE}")
 
