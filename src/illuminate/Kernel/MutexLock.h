@@ -8,6 +8,7 @@
 class MutexLock : noncopyable
 {
 private:
+    //只有一个私有成员线程锁
     pthread_mutex_t mutex_;
 private:
     friend class Condition;

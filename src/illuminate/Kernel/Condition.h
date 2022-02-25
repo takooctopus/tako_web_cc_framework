@@ -9,8 +9,8 @@
 
 class Condition : noncopyable{
 private:
-    MutexLock &mutex_; //拿了个引用
-    pthread_cond_t cond_;
+    MutexLock &mutex_; 
+    pthread_cond_t cond_; //能实时返回线程锁的状态
 public:
     explicit Condition(MutexLock &_mutex) : mutex_(_mutex) {
         pthread_cond_init(&cond_, NULL); //初始化

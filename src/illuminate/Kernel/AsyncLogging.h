@@ -16,7 +16,7 @@ class AsyncLogging{
     using Buffer = FixedBuffer<kLargeBUffer>;
     using SPBuffer = std::shared_ptr<Buffer>;
     using BufferVector = std::vector<SPBuffer>;
-    const int kFlushInterval;
+    const int flush_interval_;
     bool running_;
     std::string basename_;
     Thread thread_;

@@ -70,5 +70,7 @@ int main(){
     strcpy(buff, "abcdef");
     inBuffer += std::string(buff, buff + nread);
     a = 7;
+
+    
     return 0;
 }

@@ -47,8 +47,10 @@ concept IntegralType = std::is_integral<T>::value;
 
 
 class LogStream : noncopyable {
-    private:
+    public:
     using Buffer = FixedBuffer<kSmallBuffer>;
+    
+    private:
     void staticCheck();
 
     template<IntegralType T>
