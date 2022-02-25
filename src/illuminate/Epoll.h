@@ -1,5 +1,5 @@
-#ifndef __EPOLL__
-#define __EPOLL__
+#ifndef EPOLL__
+#define EPOLL__
 #include <sys/epoll.h>
 #include <memory>
 #include <unordered_map>

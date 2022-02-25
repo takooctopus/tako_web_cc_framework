@@ -1,5 +1,5 @@
-#ifndef __COUNT_DOWN_LATCH__
-#define __COUNT_DOWN_LATCH__
+#ifndef COUNT_DOWN_LATCH__
+#define COUNT_DOWN_LATCH__
 #include "Condition.h"
 #include "MutexLock.h"
 #include "noncopyable.h"

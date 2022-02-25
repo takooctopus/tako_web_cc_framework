@@ -1,5 +1,5 @@
-#ifndef __NON_COPY_ABLE__
-#define __NON_COPY_ABLE__
+#ifndef NON_COPY_ABLE__
+#define NON_COPY_ABLE__
 class noncopyable {
  protected:
   noncopyable() {}

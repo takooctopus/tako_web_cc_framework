@@ -1,5 +1,5 @@
-#ifndef __HTTP_DATA__
-#define __HTTP_DATA__
+#ifndef HTTP_DATA__
+#define HTTP_DATA__
 
 #include <sys/epoll.h>
 #include <unistd.h>

@@ -1,5 +1,5 @@
-#ifndef __SERVER__
-#define __SERVER__
+#ifndef SERVER__
+#define SERVER__
 #include<string>
 #include<iostream>
 class Server

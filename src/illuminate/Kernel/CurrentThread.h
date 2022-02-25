@@ -1,5 +1,5 @@
-#ifndef __CURRENT_TREAD__
-#define __CURRENT_TREAD__
+#ifndef CURRENT_TREAD__
+#define CURRENT_TREAD__
 #include <stdint.h>
 namespace CurrentThread {
     extern __thread int t_cachedTid;

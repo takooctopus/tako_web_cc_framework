@@ -1,5 +1,5 @@
-#ifndef LOG_STREAM
-#define LOG_STREAM
+#ifndef LOG_STREAM__
+#define LOG_STREAM__
 #include <assert.h>
 #include <string.h>
 #include <string>

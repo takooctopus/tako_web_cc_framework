@@ -1,5 +1,5 @@
-#ifndef __MUTEX_LOCK__
-#define __MUTEX_LOCK__
+#ifndef MUTEX_LOCK__
+#define MUTEX_LOCK__
 
 #include <pthread.h>
 #include <cstdio>

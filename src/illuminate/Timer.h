@@ -1,5 +1,5 @@
-#ifndef __TIMER__
-#define __TIMER__
+#ifndef TIMER__
+#define TIMER__
 
 #include <unistd.h>
 #include <deque>

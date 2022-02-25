@@ -1,6 +1,6 @@
 
-#ifndef __CHANNEL__
-#define __CHANNEL__
+#ifndef CHANNEL__
+#define CHANNEL__
 
 #include <sys/epoll.h>
 #include <sys/epoll.h>

@@ -1,5 +1,5 @@
-#ifndef __EVENT_LOOP__
-#define __EVENT_LOOP__
+#ifndef EVENT_LOOP__
+#define EVENT_LOOP__
 #include <string>
 #include <functional>
 #include <memory>

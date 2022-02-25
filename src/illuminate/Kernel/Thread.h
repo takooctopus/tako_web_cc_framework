@@ -1,5 +1,5 @@
-#ifndef __THREAD__
-#define __THREAD__
+#ifndef THREAD__
+#define THREAD__
     #include <pthread.h>
     #include <sys/syscall.h>
     #include <unistd.h>

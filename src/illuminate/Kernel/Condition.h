@@ -1,5 +1,5 @@
-#ifndef __CONDITION__
-#define __CONDITION__
+#ifndef CONDITION__
+#define CONDITION__
 #include <errno.h>
 #include <pthread.h>
 #include <time.h>
