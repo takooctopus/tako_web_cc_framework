@@ -65,6 +65,7 @@ private:
     static const int MAXFDS = 100000;
     int epoll_fd_;
     std::vector<epoll_event> events_;
+    // 因为采用的shared_ptr指针池，我们只需要对文件描述符对应智能指针绑定进行释放就好
     std::shared_ptr<Channel> fd2chan_[MAXFDS];
     std::shared_ptr<HttpData> fd2http_[MAXFDS];
     TimerManager time_manager_;
