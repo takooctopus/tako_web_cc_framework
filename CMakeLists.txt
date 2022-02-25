@@ -36,7 +36,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}/lib)
 # -std=c++20 包含C++20特性
 set (CMAKE_C_COMPILER "/usr/local/bin/gcc")
 set (CMAKE_CXX_COMPILER "/usr/local/bin/g++")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")	
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")	
 
 # 查找当前目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
