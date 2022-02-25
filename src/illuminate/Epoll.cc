@@ -113,7 +113,7 @@ std::vector<SPChannel> Epoll::getEventsRequest(int events_num){
 }
 
 void Epoll::addTimer(SPChannel request_data, int timeout){
-    using SPHttpData = shared_ptr<HttpData>;
+    using SPHttpData = std::shared_ptr<HttpData>;
     SPHttpData t = request_data->getHoleder();
     if(t){
         time_manager_.addTimer(t, timeout);

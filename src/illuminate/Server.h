@@ -18,11 +18,4 @@ public:
     };
 };
 
-Server::Server(/* args */)
-{
-}
-
-Server::~Server()
-{
-}
 #endif

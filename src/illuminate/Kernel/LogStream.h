@@ -39,8 +39,8 @@ class FixedBuffer : noncopyable {
 };
 
 /* 限定为数学类型*/
-template<typename T>
-concept ArithmeticType = std::is_arithmetic<T>::value;
+// template<typename T>
+// concept ArithmeticType = std::is_arithmetic<T>::value;
 
 template<typename T>
 concept IntegralType = std::is_integral<T>::value;
@@ -94,9 +94,10 @@ class LogStream : noncopyable {
     template<IntegralType T>
     LogStream& operator<<(T);
 
+    
     // LogStream& operator<<(short);
     // LogStream& operator<<(unsigned short);
-    // LogStream& operator<<(int);
+    LogStream& operator<<(int);
     // LogStream& operator<<(unsigned int);
     // LogStream& operator<<(long);
     // LogStream& operator<<(unsigned long);

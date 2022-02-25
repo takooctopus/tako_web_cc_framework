@@ -14,7 +14,7 @@ const char* zero = digits + 9;
 
 /* @return size_t 即转换成字符串后长度*/
 template<IntegralType T>
-size_t covert(char buff[], T value) {
+size_t convert(char buff[], T value) {
     T i = value;
     char* p = buff;
 
@@ -42,6 +42,11 @@ void LogStream::formatInteger(T v){
 // 整形的适配
 template <IntegralType T>
 LogStream& LogStream::operator<<(T v) {
+  formatInteger(v);
+  return *this;
+}
+
+LogStream& LogStream::operator<<(int v) {
   formatInteger(v);
   return *this;
 }

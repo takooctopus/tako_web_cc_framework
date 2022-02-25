@@ -20,8 +20,9 @@ set (ILLUMINATE_SOURCE
     ./Kernel/LogStream.cc
     ./Kernel/AsyncLogging.cc
     ./Kernel/LogFile.cc
+    ./Kernel/Logging.cc
 )
-aux_source_directory(. ILLUMINATE_SOURCE)
+# aux_source_directory(. ILLUMINATE_SOURCE)
 
 message("--    测试ILLUMINATE[父目录] : MyVAL : ${ILLUMINATE_SOURCE}")
 

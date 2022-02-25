@@ -5,33 +5,54 @@
 #include <memory>
 #include <vector>
 #include <iostream>
-/* TODO:
-    #include "Epoll.h"
-    #include "Util.h"
-    #include "base/CurrentThread.h"
-    #include "base/Logging.h"
-    #include "base/Thread.h"
-*/
+
+#include "Epoll.h"
+#include "Util.h"
+#include "Kernel/CurrentThread.h"
+#include "Kernel/Logging.h"
+#include "Kernel/Thread.h"
+
 
 class EventLoop
 {
 private:
-    /* data */
-    const std::string class_name_ = "EventLoop";
+    using SPEpoll = std::shared_ptr<Epoll>;
+    using Functor = std::function<void()>;
+    using SPChannel = std::shared_ptr<Channel>;
+    bool looping_;
+    SPEpoll poller_;
+    int wakeup_fd_;
+    bool quit_;
+    bool event_hadling_;
+    mutable MutexLock mutex_;
+    std::vector<Functor> pending_functors_;
+    bool calling_pending_functors_;
+    const pid_t thread_id_;
+    SPChannel p_wakedup_channel_;
+
+    void wakeup();
+    void handleRead();
+    void doPendingFunctors();
+    void handleConn();
+
 public:
-    EventLoop(/* args */);
+    EventLoop();
     ~EventLoop();
-    void class_name(){
-        std::cout << class_name_ << std::endl;
+    void loop();
+    void quit();
+    void runInLoop(Functor&& cb);
+    void queueInLoop(Functor&& cb);
+    bool isInLoopThread() const { return thread_id_ == CurrentThread::tid(); }
+    void assertInLoopThread() { assert(isInLoopThread()); }
+    void shutdown(SPChannel channel){ shutDownWR(channel->getFd()); }
+    void removeFromPoller(SPChannel channel){ poller_->epoll_del(channel); }
+    void updatePoller(SPChannel channel, int timeout = 0){
+        poller_->epoll_mod(channel, timeout);
+    }
+    void addToPoller(SPChannel channel, int timeout = 0){
+        poller_->epoll_add(channel, timeout);
     }
 };
 
-EventLoop::EventLoop(/* args */)
-{
-}
-
-EventLoop::~EventLoop()
-{
-}
 
 #endif

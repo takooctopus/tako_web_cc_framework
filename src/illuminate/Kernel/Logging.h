@@ -35,7 +35,7 @@ class Logger{
         static std::string getLogFileName(){
             return log_file_name_;
         }
-}
+};
 
 #define LOG Logger(__FILE__, __LINE__).stream()
 
